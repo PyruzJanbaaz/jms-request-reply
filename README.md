@@ -21,5 +21,13 @@ My ([simpler requester application](https://github.com/PyruzJanbaaz/Spring-Apach
         }
         
         
-        
+
+
+As you can see, I create both a producer and consumer for our response example once again; The MessageProducer object I created was assigned a null destination; this is called an anonymous producer. We can use the anonymous producer to send messages to any destination.
+I'd rather not create a new MessageProducer object every time a message arrives since that would add more network traffic and load to our broker.
+When a request message is received by the responder application, it queries the message for the JMSReplyTo destination to which it should send the response. Once the responder knows where to send its answer, it constructs the appropriate response message and assigns it the JMSCorrelationID method that the requester will use to identify the response prior to sending it back to the responder.
+
+Now I can start to imagine how our request/response applications can scale as the number of responders can grow with the increasing workload. If I need a new responder, I can spin up another instance on a different machine; it will share the load with all the others by taking one request at a time off the shared request queue and eventually sending its response back when its done. If, for instance, each request takes about a minute to complete, our sample would finish in about ten minutes. But if we add another responder application, we can cut that time in half.
+
+
         
