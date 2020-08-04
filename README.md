@@ -1,5 +1,4 @@
 # Jms-Request-Reply
-
 The JMS response application
 
 - Spring 4.3.7.RELEASE
