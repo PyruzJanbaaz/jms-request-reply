@@ -39,7 +39,7 @@
     </dependencies>
 
     <build>
-        <finalName>MobileBanking.Server-1.13.30</finalName>
+        <finalName>jms-request-reply</finalName>
 
         <plugins>
             <plugin>
