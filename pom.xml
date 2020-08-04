@@ -3,7 +3,6 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.pyruz.rpc</groupId>
     <version>1.1.12</version>
@@ -22,25 +21,21 @@
             <artifactId>activemq-broker</artifactId>
             <version>5.14.4</version>
         </dependency>
-
         <!-- Spring  dependencies -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
-
     </dependencies>
 
     <build>
-        <finalName>MobileBanking.Server-1.13.30</finalName>
-
+        <finalName>${project.artifactId}-${project.version}</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -83,6 +78,5 @@
                 </configuration>
             </plugin>
         </plugins>
-
     </build>
 </project>
