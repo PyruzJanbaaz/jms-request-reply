@@ -2,7 +2,15 @@
 
 The JMS response application
 
-My ([simpler requester application](https://github.com/PyruzJanbaaz/Spring-Apache-Camel-RestletJmsRqerustReply)) places several requests onto a queue on our ActiveMQ Broker, and then it waits until all its outstanding requests are processed before finishing.In order to implement our simple responder application, I assemble many of the same JMS elements I did in the requester example; lets take a look at this in the following code:
+- Spring 4.3.7.RELEASE
+- Apache Activemq 5.6.0
+- JavaSE 1.8
+- Maven 3.3.9
+
+
+# How it works...
+
+My ([requester application](https://github.com/PyruzJanbaaz/Spring-Apache-Camel-RestletJmsRqerustReply)) places several requests onto a queue on our ActiveMQ Broker, and then it waits until all its outstanding requests are processed before finishing.In order to implement our simple responder application, I assemble many of the same JMS elements I did in the requester example; lets take a look at this in the following code:
 
         TextMessage txtMsg = (TextMessage) message;
         try {
